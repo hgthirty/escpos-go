@@ -1,0 +1,14 @@
+<root>
+    <p align="center" size="2">乐惠点餐</p>
+    <p align="center" size="1" strong="1">XXX</p>
+    <p><loop>X</loop></p>
+    <p></p>
+    <p>
+        <cell width="0.25">XXX</cell>
+        <cell align="center" width="0.25">XXX</cell>
+        <cell align="left" width="0.25">XXX</cell>
+        <cell align="right" width="0.25">XXX</cell>
+    </p>
+    <p align="center"><img><![CDATA[http://localhost/doubi/2.jpeg]]></img></p>
+    <p align="center"><qrcode><![CDATA[https://pos-upgrade-file-1253985538.cos.ap-beijing.myqcloud.com/1535462073572.jpg]]></qrcode></p>
+</root>
