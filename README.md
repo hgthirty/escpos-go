@@ -2,6 +2,7 @@
 go escpos
 # 使用用例参考 /demo/demo.go
 `
+    
     /***
  	 * 测试xml ,测试解析xml文件
  	 */
