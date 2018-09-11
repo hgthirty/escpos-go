@@ -510,7 +510,7 @@ func (e *Escpos) WriteCells(cells []Cell) {
 		}
 		str = textReplace(str)
 	}
-	fmt.Printf("%d\n", len(str))
+	//fmt.Printf("%d\n", len(str))
 	str += "\n"
 	e.Write(str)
 }
@@ -541,11 +541,12 @@ type PinterImageInfo struct {
  * 图片解析
  */
 func getImageInfo(r io.Reader) (imageInfo PinterImageInfo) {
+
 	imageHanel, t, err := image.Decode(r)
 	if err != nil {
 		fmt.Println(t, err)
+		return
 	}
-
 	rect := imageHanel.Bounds()
 
 	width := (rect.Size().X + 7) / 8

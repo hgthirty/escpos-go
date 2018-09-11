@@ -1,0 +1,10 @@
+package: github.com/fpay/dc-black
+import:
+- package: github.com/fpay/rabbiter
+- package: github.com/fpay/amqpool
+- package: github.com/streadway/amqp
+- package: github.com/google/gopacket
+  version: ^1.1.14
+- package: github.com/Sirupsen/logrus
+  version: ^1.0.6
+- package: github.com/timest/gomanuf

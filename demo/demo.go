@@ -26,9 +26,9 @@ func main() {
 	 */
 
 	//方式1  usb连接
-	conn, err := conntion.NewUsbConntion("/dev/usb/lp0")
+	//conn, err := conntion.NewUsbConntion("/dev/usb/lp0")
 	//方式2  网络连接
-	//conn, err := conntion.NewNetConntion("10.0.1.150:9100")
+	conn, err := conntion.NewNetConntion("10.0.1.150:9100")
 	defer conn.Close()
 
 	if err != nil {
@@ -75,7 +75,6 @@ func test1() {
 	printDirver.Cut()
 	return
 }
-
 
 /***
  * 模仿抖音 连续打印图片
