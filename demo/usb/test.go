@@ -20,3 +20,5 @@ func main() {
 	cyScreen := win.GetSystemMetrics(win.SM_CYSCREEN)
 	win.MessageBox(hwnd, _TEXT("屏幕长:"+_toString(cxScreen)+"宽:"+_toString(cyScreen)), _TEXT("消息"), win.MB_OK)
 }
+
+

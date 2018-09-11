@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"encoding/xml"
-		"os"
+	"os"
 	"time"
-	"github.com/fpay/escpos-go/printer/conntion"
-	"github.com/fpay/escpos-go/printer/driver/escpos"
+	"github.com/gw123/escpos-go/printer/conntion"
+	"github.com/gw123/escpos-go/printer/driver/escpos"
 )
 
 func main() {
@@ -26,9 +26,9 @@ func main() {
 	 */
 
 	//方式1  usb连接
-	//conn, err := conntion.NewUsbConntion("/dev/usb/lp2")
+	conn, err := conntion.NewUsbConntion("/dev/usb/lp0")
 	//方式2  网络连接
-	conn, err := conntion.NewNetConntion("10.0.1.150:9100")
+	//conn, err := conntion.NewNetConntion("10.0.1.150:9100")
 	defer conn.Close()
 
 	if err != nil {

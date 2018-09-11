@@ -13,7 +13,7 @@ import (
 	"net/http"
 	"os"
 	"math"
-	"github.com/fpay/escpos-go/util"
+	"github.com/gw123/escpos-go/util"
 )
 
 // Text replacement map
