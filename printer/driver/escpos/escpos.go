@@ -337,7 +337,7 @@ func (e *Escpos) FeedAndCut(params map[string]string) {
  */
 func (e *Escpos) WriteRaw(data []byte) (n int, err error) {
 	if len(data) > 0 {
-		log.Printf("Writing %d bytes\n", len(data))
+		//log.Printf("Writing %d bytes\n", len(data))
 		e.dst.Write(data)
 	} else {
 		log.Printf("Wrote NO bytes\n")
@@ -450,11 +450,11 @@ func (e *Escpos) WriteXml(root Root) {
  */
 func (e *Escpos) WriteRemoteImage(url string) {
 	response, err := http.Get(url)
-	defer response.Body.Close()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	defer response.Body.Close()
 	e.WriteImage(response.Body)
 }
 

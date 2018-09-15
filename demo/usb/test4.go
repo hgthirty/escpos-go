@@ -196,7 +196,7 @@ func (this *KeyBorardBuffer) Reset(isOutput bool) {
 
 	this.Pos = 0
 	this.timer = 0
-	this.LastKeyDownTime = 0
+	this.LastKeyDownTime = 0/home/gw/web/go/src/github.com/gw123/escpos-go/demo/usb/test4.go
 	resetLock.Unlock()
 }
 

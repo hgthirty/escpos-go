@@ -26,6 +26,16 @@ func ParseXml(io io.Reader) (root Root, err error) {
 }
 
 /***
+ * 解析基础的xml io流
+ */
+func ParseString(content string) (root Root, err error) {
+
+	err = xml.Unmarshal([]byte(content), &root)
+
+	return root, err
+}
+
+/***
  * 解析基础的xml 文件
  */
 func ParseLocalXml(filename string) (root Root, err error) {

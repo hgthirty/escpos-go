@@ -38,3 +38,4 @@ func (this *NetConntion) Info() Status {
 func (this *NetConntion) Close() {
 	this.Conn.Close()
 }
+

@@ -1,34 +1,25 @@
 package main
 
 import (
-	"os"
-	"os/exec"
 	"fmt"
-	"flag"
-	"strings"
+	"github.com/gw123/escpos-go/printer/conntion/scanner"
+	"github.com/gw123/escpos-go/util"
 )
 
+
+
 func main() {
-	command := flag.String("cmd", "pwd", "Set the command.")
-	args := flag.String("args", "", "Set the args. (separated by spaces)")
-	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage: %s [-cmd <command>] [-args <the arguments (separated by spaces)>]\n", os.Args[0])
-		flag.PrintDefaults()
-	}
-	flag.Parse()
-	fmt.Println("Command: ", *command)
-	fmt.Println("Arguments: ", *args)
-	var argArray []string
-	if *args != "" {
-		argArray = strings.Split(*args, " ")
-	} else {
-		argArray = make([]string, 0)
-	}
-	cmd := exec.Command(*command, argArray...)
-	buf, err := cmd.Output()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "The command failed to perform: %s (Command: %s, Arguments: %s)", err, *command, *args)
-		return
-	}
-	fmt.Fprintf(os.Stdout, "Result: %s", buf)
+	fmt.Println("本机地址:")
+	hostAddrs := util.GetHostNet()
+	fmt.Println(hostAddrs)
+	fmt.Println()
+
+	fmt.Println("USB打印机:")
+	usbPrinterList := scanner.GetUsbPrinter("/dev/usb")
+	fmt.Println(usbPrinterList)
+	fmt.Println()
+
+	fmt.Println("网络打印机:")
+	printerList := scanner.GetNetPrinter()
+	fmt.Println(printerList)
 }
